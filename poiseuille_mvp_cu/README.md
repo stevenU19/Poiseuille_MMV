@@ -51,14 +51,14 @@ poiseuille_mvp_cu/
 
 ## 🔧 Compilación manual
 
-Para compilar el binario:
+Para compilar el binario, ejecuta los siguientes comando de cmake:
 
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
 ```
 
-Esto genera el ejecutable:
+Lo anterior genera el siguiente ejecutable:
 
 ```
 build/poiseuille
