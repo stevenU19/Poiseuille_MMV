@@ -1,0 +1,73 @@
+>> Compilando BLOCK_SIZE=128 ...
+-- The CXX compiler identification is GNU 5.3.0
+-- The CUDA compiler identification is NVIDIA 8.0.61
+-- Check for working CXX compiler: /opt/ohpc/pub/devtools/gcc/5.3.0/bin/c++
+-- Check for working CXX compiler: /opt/ohpc/pub/devtools/gcc/5.3.0/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working CUDA compiler: /opt/ohpc/pub/devtools/cuda/8.0/bin/nvcc
+-- Check for working CUDA compiler: /opt/ohpc/pub/devtools/cuda/8.0/bin/nvcc -- works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Toolchain esperado: CUDA 8.0 + GCC 5.3.0 (Fermi sm_20, C++11)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/fasanchezc/poiseuille_mvp_cu/build_bs_128
+Scanning dependencies of target poiseuille
+[ 50%] Building CUDA object CMakeFiles/poiseuille.dir/src/poiseuille.cu.o
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu(207): warning: variable "d_prof_u" was declared but never referenced
+
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu(207): warning: variable "d_prof_c" was declared but never referenced
+
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu(207): warning: variable "d_prof_u" was declared but never referenced
+
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu(207): warning: variable "d_prof_c" was declared but never referenced
+
+[100%] Linking CUDA executable poiseuille
+[100%] Built target poiseuille
+cuda,128,1,31600,500,129717.8,0.12
+CUDA BS=128 run=1 -> 129717.8 ms  0.12 MPUPS
+cuda,128,2,31600,500,145424.2,0.11
+CUDA BS=128 run=2 -> 145424.2 ms  0.11 MPUPS
+cuda,128,3,31600,500,148394.7,0.11
+CUDA BS=128 run=3 -> 148394.7 ms  0.11 MPUPS
+>> Compilando BLOCK_SIZE=256 ...
+-- The CXX compiler identification is GNU 5.3.0
+-- The CUDA compiler identification is NVIDIA 8.0.61
+-- Check for working CXX compiler: /opt/ohpc/pub/devtools/gcc/5.3.0/bin/c++
+-- Check for working CXX compiler: /opt/ohpc/pub/devtools/gcc/5.3.0/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working CUDA compiler: /opt/ohpc/pub/devtools/cuda/8.0/bin/nvcc
+-- Check for working CUDA compiler: /opt/ohpc/pub/devtools/cuda/8.0/bin/nvcc -- works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Toolchain esperado: CUDA 8.0 + GCC 5.3.0 (Fermi sm_20, C++11)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/fasanchezc/poiseuille_mvp_cu/build_bs_256
+Scanning dependencies of target poiseuille
+[ 50%] Building CUDA object CMakeFiles/poiseuille.dir/src/poiseuille.cu.o
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu(207): warning: variable "d_prof_u" was declared but never referenced
+
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu(207): warning: variable "d_prof_c" was declared but never referenced
+
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu(207): warning: variable "d_prof_u" was declared but never referenced
+
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu(207): warning: variable "d_prof_c" was declared but never referenced
+
+[100%] Linking CUDA executable poiseuille
+[100%] Built target poiseuille
+cuda,256,1,31600,500,141202.1,0.11
+CUDA BS=256 run=1 -> 141202.1 ms  0.11 MPUPS
+cuda,256,2,31600,500,140570.3,0.11
+CUDA BS=256 run=2 -> 140570.3 ms  0.11 MPUPS
+cuda,256,3,31600,500,137561.3,0.11
+CUDA BS=256 run=3 -> 137561.3 ms  0.11 MPUPS
+OK. Resultados en results.csv y util_cuda_BS*.log/.csv

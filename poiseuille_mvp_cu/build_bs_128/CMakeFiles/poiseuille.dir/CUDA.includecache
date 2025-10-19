@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/params.hpp
+cstdint
+-
+cmath
+-
+
+../include/sph_kernels.hpp
+cuda_runtime.h
+-
+
+../include/timer.hpp
+cuda_runtime.h
+-
+cstdio
+-
+
+/home/fasanchezc/poiseuille_mvp_cu/src/poiseuille.cu
+cuda_runtime.h
+-
+cstdio
+-
+vector
+-
+cmath
+-
+params.hpp
+/home/fasanchezc/poiseuille_mvp_cu/src/params.hpp
+timer.hpp
+/home/fasanchezc/poiseuille_mvp_cu/src/timer.hpp
+sph_kernels.hpp
+/home/fasanchezc/poiseuille_mvp_cu/src/sph_kernels.hpp
+

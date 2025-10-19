@@ -1,0 +1,60 @@
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/fasanchezc/poiseuille_mvp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5584a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5584a.dir/build.make CMakeFiles/cmTC_5584a.dir/build
+gmake[1]: Entering directory '/home/fasanchezc/poiseuille_mvp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5584a.dir/src.cxx.o
+/opt/ohpc/pub/compiler/gcc/12.4.0/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_5584a.dir/src.cxx.o -c /home/fasanchezc/poiseuille_mvp/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_5584a
+/opt/ohpc/pub/utils/cmake/3.24.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5584a.dir/link.txt --verbose=1
+/opt/ohpc/pub/compiler/gcc/12.4.0/bin/c++ CMakeFiles/cmTC_5584a.dir/src.cxx.o -o cmTC_5584a 
+CMakeFiles/cmTC_5584a.dir/src.cxx.o: In function `main':
+src.cxx:(.text+0x2d): undefined reference to `pthread_create'
+src.cxx:(.text+0x39): undefined reference to `pthread_detach'
+src.cxx:(.text+0x45): undefined reference to `pthread_cancel'
+src.cxx:(.text+0x56): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_5584a.dir/build.make:99: cmTC_5584a] Error 1
+gmake[1]: Leaving directory '/home/fasanchezc/poiseuille_mvp/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_5584a/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/fasanchezc/poiseuille_mvp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4ca5f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4ca5f.dir/build.make CMakeFiles/cmTC_4ca5f.dir/build
+gmake[1]: Entering directory '/home/fasanchezc/poiseuille_mvp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_4ca5f.dir/CheckFunctionExists.cxx.o
+/opt/ohpc/pub/compiler/gcc/12.4.0/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_4ca5f.dir/CheckFunctionExists.cxx.o -c /home/fasanchezc/poiseuille_mvp/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_4ca5f
+/opt/ohpc/pub/utils/cmake/3.24.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ca5f.dir/link.txt --verbose=1
+/opt/ohpc/pub/compiler/gcc/12.4.0/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_4ca5f.dir/CheckFunctionExists.cxx.o -o cmTC_4ca5f  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_4ca5f.dir/build.make:99: cmTC_4ca5f] Error 1
+gmake[1]: Leaving directory '/home/fasanchezc/poiseuille_mvp/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_4ca5f/fast] Error 2
+
+
+

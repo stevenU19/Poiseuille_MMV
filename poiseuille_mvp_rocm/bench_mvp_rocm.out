@@ -1,0 +1,1029 @@
+>> Compilando BLOCK_SIZE=128 ...
+In file included from /home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:7:
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                                    ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                                    ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:7:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    7 |   void tic() { hipEventRecord(a, 0); }
+      |                ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |     ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:27: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |                           ^~~~~~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:10:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   10 |     float ms=0; hipEventElapsedTime(&ms, a, b); return ms;
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:44: warning: unused parameter 'p' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                            ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:54: warning: unused parameter 'acc_u' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                      ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:66: warning: unused parameter 'acc_c' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                                  ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:29: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |                             ^~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:196:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  196 |   hipMalloc(&p.next, N*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:197:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  197 |   hipMalloc(&p.cellHead, sp.nxCells*sp.nyCells*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:199:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  199 |   hipMemcpy(p.x, hx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:200:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  200 |   hipMemcpy(p.y, hy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:201:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  201 |   hipMemcpy(p.vx,hvx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:202:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  202 |   hipMemcpy(p.vy,hvy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:241:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  241 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |   ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:31: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                               ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:46: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                                              ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:33: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                 ^~~~~~~ ~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:49: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |   ^~~~~~~ ~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:20: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |                    ^~~~~~~ ~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:10: warning: unused variable 'd_prof_u' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |          ^~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:33: warning: unused variable 'd_prof_c' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |                                 ^~~~~~~~
+38 warnings generated when compiling for gfx90a.
+In file included from /home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:7:
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                                    ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                                    ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:7:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    7 |   void tic() { hipEventRecord(a, 0); }
+      |                ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |     ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:27: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |                           ^~~~~~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:10:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   10 |     float ms=0; hipEventElapsedTime(&ms, a, b); return ms;
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:44: warning: unused parameter 'p' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                            ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:54: warning: unused parameter 'acc_u' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                      ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:66: warning: unused parameter 'acc_c' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                                  ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:29: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |                             ^~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:196:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  196 |   hipMalloc(&p.next, N*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:197:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  197 |   hipMalloc(&p.cellHead, sp.nxCells*sp.nyCells*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:199:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  199 |   hipMemcpy(p.x, hx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:200:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  200 |   hipMemcpy(p.y, hy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:201:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  201 |   hipMemcpy(p.vx,hvx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:202:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  202 |   hipMemcpy(p.vy,hvy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:241:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  241 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |   ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:31: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                               ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:46: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                                              ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:33: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                 ^~~~~~~ ~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:49: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |   ^~~~~~~ ~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:20: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |                    ^~~~~~~ ~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:10: warning: unused variable 'd_prof_u' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |          ^~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:33: warning: unused variable 'd_prof_c' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |                                 ^~~~~~~~
+38 warnings generated when compiling for host.
+usage: rocm-smi [-h] [-V] [-d DEVICE [DEVICE ...]] [--alldevices] [--showhw] [-a] [-i] [-v] [-e [EVENT [EVENT ...]]]
+                [--showdriverversion] [--showtempgraph] [--showfwinfo [BLOCK [BLOCK ...]]] [--showmclkrange]
+                [--showmemvendor] [--showsclkrange] [--showproductname] [--showserial] [--showuniqueid]
+                [--showvoltagerange] [--showbus] [--showpagesinfo] [--showpendingpages] [--showretiredpages]
+                [--showunreservablepages] [-f] [-P] [-t] [-u] [--showmemuse] [--showvoltage] [-b] [-c] [-g] [-l] [-M]
+                [-m] [-o] [-p] [-S] [-s] [--showmeminfo TYPE [TYPE ...]] [--showpids [VERBOSE]]
+                [--showpidgpus [SHOWPIDGPUS [SHOWPIDGPUS ...]]] [--showreplaycount]
+                [--showrasinfo [SHOWRASINFO [SHOWRASINFO ...]]] [--showvc] [--showxgmierr] [--showtopo]
+                [--showtopoaccess] [--showtopoweight] [--showtopohops] [--showtopotype] [--showtoponuma]
+                [--showenergycounter] [--shownodesbw] [--showcomputepartition] [--showmemorypartition] [--showmetrics]
+                [-r] [--resetfans] [--resetprofile] [--resetpoweroverdrive] [--resetxgmierr] [--resetperfdeterminism]
+                [--setclock TYPE LEVEL] [--setsclk LEVEL [LEVEL ...]] [--setmclk LEVEL [LEVEL ...]]
+                [--setpcie LEVEL [LEVEL ...]] [--setslevel SCLKLEVEL SCLK SVOLT] [--setmlevel MCLKLEVEL MCLK MVOLT]
+                [--setvc POINT SCLK SVOLT] [--setsrange SCLKMIN SCLKMAX] [--setextremum min|max sclk|mclk CLK]
+                [--setmrange MCLKMIN MCLKMAX] [--setfan LEVEL] [--setperflevel LEVEL] [--setoverdrive %]
+                [--setmemoverdrive %] [--setpoweroverdrive WATTS] [--setprofile SETPROFILE] [--setperfdeterminism SCLK]
+                [--setcomputepartition {SPX,DPX,TPX,QPX,CPX,spx,dpx,tpx,qpx,cpx}]
+                [--setmemorypartition {NPS1,NPS2,NPS4,NPS8,nps1,nps2,nps4,nps8}] [--rasenable BLOCK ERRTYPE]
+                [--rasdisable BLOCK ERRTYPE] [--rasinject BLOCK] [--gpureset] [--load FILE | --save FILE]
+                [--autorespond RESPONSE] [--loglevel LEVEL] [--json] [--csv]
+rocm-smi: error: unrecognized arguments: --interval 1000
+ROCm BS=128 run=1 -> 988.2 ms  15.99 MPUPS
+ROCm BS=128 run=2 -> 990.3 ms  15.95 MPUPS
+ROCm BS=128 run=3 -> 988.3 ms  15.99 MPUPS
+>> Compilando BLOCK_SIZE=256 ...
+In file included from /home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:7:
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                                    ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                                    ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:7:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    7 |   void tic() { hipEventRecord(a, 0); }
+      |                ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |     ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:27: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |                           ^~~~~~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:10:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   10 |     float ms=0; hipEventElapsedTime(&ms, a, b); return ms;
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:44: warning: unused parameter 'p' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                            ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:54: warning: unused parameter 'acc_u' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                      ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:66: warning: unused parameter 'acc_c' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                                  ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:29: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |                             ^~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:196:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  196 |   hipMalloc(&p.next, N*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:197:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  197 |   hipMalloc(&p.cellHead, sp.nxCells*sp.nyCells*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:199:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  199 |   hipMemcpy(p.x, hx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:200:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  200 |   hipMemcpy(p.y, hy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:201:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  201 |   hipMemcpy(p.vx,hvx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:202:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  202 |   hipMemcpy(p.vy,hvy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:241:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  241 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |   ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:31: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                               ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:46: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                                              ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:33: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                 ^~~~~~~ ~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:49: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |   ^~~~~~~ ~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:20: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |                    ^~~~~~~ ~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:10: warning: unused variable 'd_prof_u' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |          ^~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:33: warning: unused variable 'd_prof_c' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |                                 ^~~~~~~~
+38 warnings generated when compiling for gfx90a.
+In file included from /home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:7:
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                                    ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                                    ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:7:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    7 |   void tic() { hipEventRecord(a, 0); }
+      |                ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |     ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:27: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |                           ^~~~~~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:10:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   10 |     float ms=0; hipEventElapsedTime(&ms, a, b); return ms;
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:44: warning: unused parameter 'p' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                            ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:54: warning: unused parameter 'acc_u' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                      ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:66: warning: unused parameter 'acc_c' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                                  ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:29: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |                             ^~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:196:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  196 |   hipMalloc(&p.next, N*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:197:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  197 |   hipMalloc(&p.cellHead, sp.nxCells*sp.nyCells*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:199:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  199 |   hipMemcpy(p.x, hx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:200:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  200 |   hipMemcpy(p.y, hy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:201:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  201 |   hipMemcpy(p.vx,hvx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:202:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  202 |   hipMemcpy(p.vy,hvy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:241:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  241 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |   ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:31: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                               ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:46: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                                              ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:33: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                 ^~~~~~~ ~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:49: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |   ^~~~~~~ ~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:20: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |                    ^~~~~~~ ~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:10: warning: unused variable 'd_prof_u' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |          ^~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:33: warning: unused variable 'd_prof_c' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |                                 ^~~~~~~~
+38 warnings generated when compiling for host.
+usage: rocm-smi [-h] [-V] [-d DEVICE [DEVICE ...]] [--alldevices] [--showhw] [-a] [-i] [-v] [-e [EVENT [EVENT ...]]]
+                [--showdriverversion] [--showtempgraph] [--showfwinfo [BLOCK [BLOCK ...]]] [--showmclkrange]
+                [--showmemvendor] [--showsclkrange] [--showproductname] [--showserial] [--showuniqueid]
+                [--showvoltagerange] [--showbus] [--showpagesinfo] [--showpendingpages] [--showretiredpages]
+                [--showunreservablepages] [-f] [-P] [-t] [-u] [--showmemuse] [--showvoltage] [-b] [-c] [-g] [-l] [-M]
+                [-m] [-o] [-p] [-S] [-s] [--showmeminfo TYPE [TYPE ...]] [--showpids [VERBOSE]]
+                [--showpidgpus [SHOWPIDGPUS [SHOWPIDGPUS ...]]] [--showreplaycount]
+                [--showrasinfo [SHOWRASINFO [SHOWRASINFO ...]]] [--showvc] [--showxgmierr] [--showtopo]
+                [--showtopoaccess] [--showtopoweight] [--showtopohops] [--showtopotype] [--showtoponuma]
+                [--showenergycounter] [--shownodesbw] [--showcomputepartition] [--showmemorypartition] [--showmetrics]
+                [-r] [--resetfans] [--resetprofile] [--resetpoweroverdrive] [--resetxgmierr] [--resetperfdeterminism]
+                [--setclock TYPE LEVEL] [--setsclk LEVEL [LEVEL ...]] [--setmclk LEVEL [LEVEL ...]]
+                [--setpcie LEVEL [LEVEL ...]] [--setslevel SCLKLEVEL SCLK SVOLT] [--setmlevel MCLKLEVEL MCLK MVOLT]
+                [--setvc POINT SCLK SVOLT] [--setsrange SCLKMIN SCLKMAX] [--setextremum min|max sclk|mclk CLK]
+                [--setmrange MCLKMIN MCLKMAX] [--setfan LEVEL] [--setperflevel LEVEL] [--setoverdrive %]
+                [--setmemoverdrive %] [--setpoweroverdrive WATTS] [--setprofile SETPROFILE] [--setperfdeterminism SCLK]
+                [--setcomputepartition {SPX,DPX,TPX,QPX,CPX,spx,dpx,tpx,qpx,cpx}]
+                [--setmemorypartition {NPS1,NPS2,NPS4,NPS8,nps1,nps2,nps4,nps8}] [--rasenable BLOCK ERRTYPE]
+                [--rasdisable BLOCK ERRTYPE] [--rasinject BLOCK] [--gpureset] [--load FILE | --save FILE]
+                [--autorespond RESPONSE] [--loglevel LEVEL] [--json] [--csv]
+rocm-smi: error: unrecognized arguments: --interval 1000
+ROCm BS=256 run=1 -> 1064.1 ms  14.85 MPUPS
+ROCm BS=256 run=2 -> 1064.2 ms  14.85 MPUPS
+ROCm BS=256 run=3 -> 1064.2 ms  14.85 MPUPS
+>> Compilando BLOCK_SIZE=384 ...
+In file included from /home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:7:
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                                    ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                                    ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:7:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    7 |   void tic() { hipEventRecord(a, 0); }
+      |                ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |     ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:27: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |                           ^~~~~~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:10:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   10 |     float ms=0; hipEventElapsedTime(&ms, a, b); return ms;
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:44: warning: unused parameter 'p' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                            ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:54: warning: unused parameter 'acc_u' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                      ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:66: warning: unused parameter 'acc_c' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                                  ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:29: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |                             ^~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:196:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  196 |   hipMalloc(&p.next, N*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:197:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  197 |   hipMalloc(&p.cellHead, sp.nxCells*sp.nyCells*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:199:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  199 |   hipMemcpy(p.x, hx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:200:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  200 |   hipMemcpy(p.y, hy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:201:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  201 |   hipMemcpy(p.vx,hvx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:202:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  202 |   hipMemcpy(p.vy,hvy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:241:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  241 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |   ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:31: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                               ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:46: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                                              ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:33: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                 ^~~~~~~ ~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:49: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |   ^~~~~~~ ~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:20: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |                    ^~~~~~~ ~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:10: warning: unused variable 'd_prof_u' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |          ^~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:33: warning: unused variable 'd_prof_c' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |                                 ^~~~~~~~
+38 warnings generated when compiling for gfx90a.
+In file included from /home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:7:
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                                    ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                                    ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:7:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    7 |   void tic() { hipEventRecord(a, 0); }
+      |                ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |     ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:27: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |                           ^~~~~~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:10:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   10 |     float ms=0; hipEventElapsedTime(&ms, a, b); return ms;
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:44: warning: unused parameter 'p' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                            ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:54: warning: unused parameter 'acc_u' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                      ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:66: warning: unused parameter 'acc_c' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                                  ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:29: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |                             ^~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:196:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  196 |   hipMalloc(&p.next, N*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:197:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  197 |   hipMalloc(&p.cellHead, sp.nxCells*sp.nyCells*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:199:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  199 |   hipMemcpy(p.x, hx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:200:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  200 |   hipMemcpy(p.y, hy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:201:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  201 |   hipMemcpy(p.vx,hvx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:202:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  202 |   hipMemcpy(p.vy,hvy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:241:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  241 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |   ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:31: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                               ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:46: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                                              ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:33: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                 ^~~~~~~ ~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:49: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |   ^~~~~~~ ~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:20: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |                    ^~~~~~~ ~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:10: warning: unused variable 'd_prof_u' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |          ^~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:33: warning: unused variable 'd_prof_c' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |                                 ^~~~~~~~
+38 warnings generated when compiling for host.
+usage: rocm-smi [-h] [-V] [-d DEVICE [DEVICE ...]] [--alldevices] [--showhw] [-a] [-i] [-v] [-e [EVENT [EVENT ...]]]
+                [--showdriverversion] [--showtempgraph] [--showfwinfo [BLOCK [BLOCK ...]]] [--showmclkrange]
+                [--showmemvendor] [--showsclkrange] [--showproductname] [--showserial] [--showuniqueid]
+                [--showvoltagerange] [--showbus] [--showpagesinfo] [--showpendingpages] [--showretiredpages]
+                [--showunreservablepages] [-f] [-P] [-t] [-u] [--showmemuse] [--showvoltage] [-b] [-c] [-g] [-l] [-M]
+                [-m] [-o] [-p] [-S] [-s] [--showmeminfo TYPE [TYPE ...]] [--showpids [VERBOSE]]
+                [--showpidgpus [SHOWPIDGPUS [SHOWPIDGPUS ...]]] [--showreplaycount]
+                [--showrasinfo [SHOWRASINFO [SHOWRASINFO ...]]] [--showvc] [--showxgmierr] [--showtopo]
+                [--showtopoaccess] [--showtopoweight] [--showtopohops] [--showtopotype] [--showtoponuma]
+                [--showenergycounter] [--shownodesbw] [--showcomputepartition] [--showmemorypartition] [--showmetrics]
+                [-r] [--resetfans] [--resetprofile] [--resetpoweroverdrive] [--resetxgmierr] [--resetperfdeterminism]
+                [--setclock TYPE LEVEL] [--setsclk LEVEL [LEVEL ...]] [--setmclk LEVEL [LEVEL ...]]
+                [--setpcie LEVEL [LEVEL ...]] [--setslevel SCLKLEVEL SCLK SVOLT] [--setmlevel MCLKLEVEL MCLK MVOLT]
+                [--setvc POINT SCLK SVOLT] [--setsrange SCLKMIN SCLKMAX] [--setextremum min|max sclk|mclk CLK]
+                [--setmrange MCLKMIN MCLKMAX] [--setfan LEVEL] [--setperflevel LEVEL] [--setoverdrive %]
+                [--setmemoverdrive %] [--setpoweroverdrive WATTS] [--setprofile SETPROFILE] [--setperfdeterminism SCLK]
+                [--setcomputepartition {SPX,DPX,TPX,QPX,CPX,spx,dpx,tpx,qpx,cpx}]
+                [--setmemorypartition {NPS1,NPS2,NPS4,NPS8,nps1,nps2,nps4,nps8}] [--rasenable BLOCK ERRTYPE]
+                [--rasdisable BLOCK ERRTYPE] [--rasinject BLOCK] [--gpureset] [--load FILE | --save FILE]
+                [--autorespond RESPONSE] [--loglevel LEVEL] [--json] [--csv]
+rocm-smi: error: unrecognized arguments: --interval 1000
+ROCm BS=384 run=1 -> 985.8 ms  16.03 MPUPS
+ROCm BS=384 run=2 -> 986.5 ms  16.02 MPUPS
+ROCm BS=384 run=3 -> 985.6 ms  16.03 MPUPS
+>> Compilando BLOCK_SIZE=512 ...
+In file included from /home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:7:
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                                    ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                                    ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:7:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    7 |   void tic() { hipEventRecord(a, 0); }
+      |                ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |     ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:27: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |                           ^~~~~~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:10:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   10 |     float ms=0; hipEventElapsedTime(&ms, a, b); return ms;
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:44: warning: unused parameter 'p' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                            ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:54: warning: unused parameter 'acc_u' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                      ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:66: warning: unused parameter 'acc_c' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                                  ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:29: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |                             ^~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:196:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  196 |   hipMalloc(&p.next, N*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:197:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  197 |   hipMalloc(&p.cellHead, sp.nxCells*sp.nyCells*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:199:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  199 |   hipMemcpy(p.x, hx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:200:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  200 |   hipMemcpy(p.y, hy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:201:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  201 |   hipMemcpy(p.vx,hvx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:202:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  202 |   hipMemcpy(p.vy,hvy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:241:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  241 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |   ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:31: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                               ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:46: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                                              ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:33: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                 ^~~~~~~ ~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:49: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |   ^~~~~~~ ~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:20: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |                    ^~~~~~~ ~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:10: warning: unused variable 'd_prof_u' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |          ^~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:33: warning: unused variable 'd_prof_c' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |                                 ^~~~~~~~
+38 warnings generated when compiling for gfx90a.
+In file included from /home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:7:
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:5:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    5 |   GpuTimer() { hipEventCreate(&a); hipEventCreate(&b); }
+      |                                    ^~~~~~~~~~~~~~ ~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:6:36: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    6 |   ~GpuTimer(){ hipEventDestroy(a); hipEventDestroy(b); }
+      |                                    ^~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:7:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    7 |   void tic() { hipEventRecord(a, 0); }
+      |                ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |     ^~~~~~~~~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:9:27: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+    9 |     hipEventRecord(b, 0); hipEventSynchronize(b);
+      |                           ^~~~~~~~~~~~~~~~~~~ ~
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp:10:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   10 |     float ms=0; hipEventElapsedTime(&ms, a, b); return ms;
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:44: warning: unused parameter 'p' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                            ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:54: warning: unused parameter 'acc_u' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                      ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:151:66: warning: unused parameter 'acc_c' [-Wunused-parameter]
+  151 | __global__ void kProfileUy(const Particles p, float *acc_u, int *acc_c){
+      |                                                                  ^
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:192:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  192 |   hipMalloc(&p.x, nBytes); hipMalloc(&p.y, nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:193:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |   hipMalloc(&p.vx,nBytes); hipMalloc(&p.vy,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:194:28: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  194 |   hipMalloc(&p.ax,nBytes); hipMalloc(&p.ay,nBytes);
+      |                            ^~~~~~~~~ ~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:195:29: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  195 |   hipMalloc(&p.rho,nBytes); hipMalloc(&p.P,nBytes);
+      |                             ^~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:196:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  196 |   hipMalloc(&p.next, N*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:197:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  197 |   hipMalloc(&p.cellHead, sp.nxCells*sp.nyCells*sizeof(int));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:199:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  199 |   hipMemcpy(p.x, hx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:200:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  200 |   hipMemcpy(p.y, hy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:201:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  201 |   hipMemcpy(p.vx,hvx.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:202:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  202 |   hipMemcpy(p.vy,hvy.data(), nBytes, hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:241:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  241 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |   ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:31: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                               ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:270:46: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  270 |   hipFree(p.x); hipFree(p.y); hipFree(p.vx); hipFree(p.vy);
+      |                                              ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:33: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                 ^~~~~~~ ~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:271:49: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  271 |   hipFree(p.ax); hipFree(p.ay); hipFree(p.rho); hipFree(p.P);
+      |                                                 ^~~~~~~ ~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |   ^~~~~~~ ~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:272:20: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  272 |   hipFree(p.next); hipFree(p.cellHead);
+      |                    ^~~~~~~ ~~~~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:10: warning: unused variable 'd_prof_u' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |          ^~~~~~~~
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip:209:33: warning: unused variable 'd_prof_c' [-Wunused-variable]
+  209 |   float *d_prof_u=nullptr; int *d_prof_c=nullptr;
+      |                                 ^~~~~~~~
+38 warnings generated when compiling for host.
+usage: rocm-smi [-h] [-V] [-d DEVICE [DEVICE ...]] [--alldevices] [--showhw] [-a] [-i] [-v] [-e [EVENT [EVENT ...]]]
+                [--showdriverversion] [--showtempgraph] [--showfwinfo [BLOCK [BLOCK ...]]] [--showmclkrange]
+                [--showmemvendor] [--showsclkrange] [--showproductname] [--showserial] [--showuniqueid]
+                [--showvoltagerange] [--showbus] [--showpagesinfo] [--showpendingpages] [--showretiredpages]
+                [--showunreservablepages] [-f] [-P] [-t] [-u] [--showmemuse] [--showvoltage] [-b] [-c] [-g] [-l] [-M]
+                [-m] [-o] [-p] [-S] [-s] [--showmeminfo TYPE [TYPE ...]] [--showpids [VERBOSE]]
+                [--showpidgpus [SHOWPIDGPUS [SHOWPIDGPUS ...]]] [--showreplaycount]
+                [--showrasinfo [SHOWRASINFO [SHOWRASINFO ...]]] [--showvc] [--showxgmierr] [--showtopo]
+                [--showtopoaccess] [--showtopoweight] [--showtopohops] [--showtopotype] [--showtoponuma]
+                [--showenergycounter] [--shownodesbw] [--showcomputepartition] [--showmemorypartition] [--showmetrics]
+                [-r] [--resetfans] [--resetprofile] [--resetpoweroverdrive] [--resetxgmierr] [--resetperfdeterminism]
+                [--setclock TYPE LEVEL] [--setsclk LEVEL [LEVEL ...]] [--setmclk LEVEL [LEVEL ...]]
+                [--setpcie LEVEL [LEVEL ...]] [--setslevel SCLKLEVEL SCLK SVOLT] [--setmlevel MCLKLEVEL MCLK MVOLT]
+                [--setvc POINT SCLK SVOLT] [--setsrange SCLKMIN SCLKMAX] [--setextremum min|max sclk|mclk CLK]
+                [--setmrange MCLKMIN MCLKMAX] [--setfan LEVEL] [--setperflevel LEVEL] [--setoverdrive %]
+                [--setmemoverdrive %] [--setpoweroverdrive WATTS] [--setprofile SETPROFILE] [--setperfdeterminism SCLK]
+                [--setcomputepartition {SPX,DPX,TPX,QPX,CPX,spx,dpx,tpx,qpx,cpx}]
+                [--setmemorypartition {NPS1,NPS2,NPS4,NPS8,nps1,nps2,nps4,nps8}] [--rasenable BLOCK ERRTYPE]
+                [--rasdisable BLOCK ERRTYPE] [--rasinject BLOCK] [--gpureset] [--load FILE | --save FILE]
+                [--autorespond RESPONSE] [--loglevel LEVEL] [--json] [--csv]
+rocm-smi: error: unrecognized arguments: --interval 1000
+ROCm BS=512 run=1 -> 1052.9 ms  15.01 MPUPS
+ROCm BS=512 run=2 -> 1047.9 ms  15.08 MPUPS
+ROCm BS=512 run=3 -> 1047.7 ms  15.08 MPUPS
+OK. Resultados en results_rocm.csv y util_rocm_BS*.log/.json

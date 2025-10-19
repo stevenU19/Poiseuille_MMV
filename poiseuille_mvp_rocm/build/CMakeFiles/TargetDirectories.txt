@@ -1,0 +1,3 @@
+/home/fasanchezc/poiseuille_mvp/build/CMakeFiles/poiseuille.dir
+/home/fasanchezc/poiseuille_mvp/build/CMakeFiles/edit_cache.dir
+/home/fasanchezc/poiseuille_mvp/build/CMakeFiles/rebuild_cache.dir

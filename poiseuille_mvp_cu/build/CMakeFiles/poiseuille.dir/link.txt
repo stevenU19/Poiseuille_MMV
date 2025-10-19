@@ -1,0 +1,1 @@
+/opt/ohpc/pub/devtools/gcc/5.3.0/bin/g++  CMakeFiles/poiseuille.dir/src/poiseuille.cu.o -o poiseuille  -L"/opt/ohpc/pub/devtools/cuda/8.0/lib64/stubs" -L"/opt/ohpc/pub/devtools/cuda/8.0/lib64" -lcudadevrt -lcudart_static -lrt -lpthread -ldl

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fasanchezc/poiseuille_mvp/include/params.hpp
+cstdint
+-
+cmath
+-
+
+/home/fasanchezc/poiseuille_mvp/include/sph_kernels.hpp
+hip/hip_runtime.h
+-
+
+/home/fasanchezc/poiseuille_mvp/include/timer.hpp
+hip/hip_runtime.h
+-
+
+/home/fasanchezc/poiseuille_mvp/src/poiseuille.hip
+hip/hip_runtime.h
+-
+cstdio
+-
+vector
+-
+cmath
+-
+params.hpp
+/home/fasanchezc/poiseuille_mvp/src/params.hpp
+timer.hpp
+/home/fasanchezc/poiseuille_mvp/src/timer.hpp
+sph_kernels.hpp
+/home/fasanchezc/poiseuille_mvp/src/sph_kernels.hpp
+
