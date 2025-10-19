@@ -5,10 +5,9 @@
 
 ## 🧩 Descripción general
 
-Este repositorio contiene dos implementaciones equivalentes del **flujo de Poiseuille** mediante el método **Smoothed Particle Hydrodynamics (SPH)**:  
-una basada en **CUDA (NVIDIA)** y otra en **ROCm/HIP (AMD)**.  
+Este repositorio contiene dos implementaciones equivalentes del **flujo de Poiseuille** mediante el método **Smoothed Particle Hydrodynamics (SPH)**, una basada en **CUDA (NVIDIA)** y otra en **ROCm/HIP (AMD)**.  
 
-El objetivo central es analizar la **portabilidad, compatibilidad y rendimiento** de un mismo modelo físico en diferentes **frameworks GPU**, mostrando los desafíos técnicos y las adaptaciones necesarias al trasladar un código científico de alto rendimiento entre plataformas.
+Su finalidad es la de analizar la **portabilidad, compatibilidad y rendimiento** de un mismo modelo físico en diferentes **frameworks GPU**, mostrando los desafíos técnicos y las adaptaciones necesarias al trasladar un código científico de alto rendimiento entre plataformas.
 
 | Plataforma | Lenguaje base | Framework | Arquitectura | GPU usada |
 |-------------|----------------|-------------|----------------|-------------|
