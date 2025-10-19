@@ -4,9 +4,10 @@ Modelo mínimo viable (ROCm) — Flujo de Poiseuille con SPH
 Este proyecto implementa una versión reducida del método SPH (Smoothed Particle Hydrodynamics) para simular el flujo laminar de Poiseuille.
 Corresponde al modelo mínimo viable (MVP) utilizado para evaluar la portabilidad y el rendimiento del método SPH al migrar desde CUDA (NVIDIA) hacia ROCm (AMD).
 
+
 🧠 Objetivo
 
-Validar experimentalmente la portabilidad funcional y física del método SPH sobre la arquitectura AMD Instinct MI210, utilizando el framework ROCm/HIP.
+Validar experimentalmente la portabilidad funcional y física del método SPH sobre la arquitectura **AMD Instinct MI210**, utilizando el framework **ROCm/HIP**.
 El propósito es comparar métricas de rendimiento con la versión CUDA, eliminando dependencias del ecosistema propietario de NVIDIA.
 
 ⚙️ Configuración del entorno (Cluster ROCm)
@@ -63,8 +64,7 @@ Compila el código usando hipcc (Clang):
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
 
-
-Esto generará el ejecutable:
+Lo anterior genera el siguiente ejecutable:
 
 build/poiseuille
 
@@ -89,20 +89,22 @@ Registra la utilización de GPU (potencia, memoria, % uso).
 
 El archivo results_rocm.csv contiene las métricas de rendimiento por tamaño de bloque:
 
-Columna	Descripción
-backend	Plataforma (rocm)
-block_size	Tamaño de bloque GPU
-run_idx	Número de repetición (1–3)
-N	Número total de partículas (≈31,600)
-steps	Número de pasos (500)
-time_ms	Tiempo total de ejecución (ms)
-mpups	Millones de partículas procesadas por segundo
+| Columna     | Descripción                                           |
+|--------------|--------------------------------------------------------|
+| backend      | Plataforma utilizada (CUDA)                           |
+| block_size   | Tamaño de bloque usado en la GPU                      |
+| run_idx      | Índice de repetición (por defecto 1–3)                |
+| N            | Número total de partículas simuladas                  |
+| steps        | Número de pasos de tiempo                             |
+| time_ms      | Tiempo total de simulación en milisegundos            |
+| mpups        | Millones de partículas procesadas por segundo         |
 
 Ejemplo:
 
-backend,block_size,run_idx,N,steps,time_ms,mpups
-rocm,128,1,31600,500,1024.7,15.9
-rocm,256,1,31600,500,1086.5,14.8
+| backend | block_size | run_idx | N     | steps | time_ms | mpups |
+|----------|-------------|---------|--------|--------|---------|--------|
+| rocm     | 128         | 1       | 31600 | 500    | 1024.7  | 15.9   |
+| rocm     | 256         | 1       | 31600 | 500    | 1086.5  | 14.8   |
 
 🧮 Eficiencia y análisis
 
@@ -110,10 +112,15 @@ MPUPS mide directamente la eficiencia computacional.
 	​
 
 🧮 Datos de referencia de hardware
-GPU	Arquitectura	TFLOPs pico (FP32)	Ancho de banda	Año
-AMD Instinct MI210	CDNA2 (gfx90a)	45.25	1.6 TB/s	2022
+
+| GPU               | Arquitectura    | TFLOPs pico (FP32) | Ancho de banda | Año  |
+|-------------------|-----------------|---------------------|----------------|------|
+| AMD Instinct MI210 | CDNA2 (gfx90a) | 45.25               | 1.6 TB/s       | 2022 |
+
 🧾 Autores
 
-Proyecto desarrollado por
-Wilmer Farfán y Fabián Sánchez
-como parte del trabajo de grado “Análisis de la portabilidad de la implementación de métodos numéricos de hidrodinámica de partículas suaves en diferentes plataformas y frameworks CPU/GPU”.
+Proyecto desarrollado por:  
+**Wilmer Farfán** y **Fabián Sánchez**  
+
+Como parte del trabajo de grado titulado:  
+> *“Análisis de la portabilidad de la implementación de métodos numéricos de hidrodinámica de partículas suaves en diferentes plataformas y frameworks CPU/GPU.”*
