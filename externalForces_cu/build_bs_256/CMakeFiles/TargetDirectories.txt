@@ -1,0 +1,3 @@
+/home/fasanchezc/modelos/ExternalForces/build_bs_256/CMakeFiles/rebuild_cache.dir
+/home/fasanchezc/modelos/ExternalForces/build_bs_256/CMakeFiles/edit_cache.dir
+/home/fasanchezc/modelos/ExternalForces/build_bs_256/CMakeFiles/external_forces.dir

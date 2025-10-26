@@ -1,0 +1,41 @@
+>> Compilando 'broken' (debe FALLAR)...
+CMake Error at CMakeLists.txt:5 (find_package):
+  By not providing "Findhip.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "hip", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "hip" with any of
+  the following names:
+
+    hipConfig.cmake
+    hip-config.cmake
+
+  Add the installation prefix of "hip" to CMAKE_PREFIX_PATH or set "hip_DIR"
+  to a directory containing one of the above files.  If "hip" provides a
+  separate development package or SDK, be sure it has been installed.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/fasanchezc/modelos/ExternalForces_hip/build_broken/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+OK: 'broken' falló como se esperaba (documenta los errores de C++17).
+>> Compilando 'fixed' ...
+CMake Error at CMakeLists.txt:5 (find_package):
+  By not providing "Findhip.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "hip", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "hip" with any of
+  the following names:
+
+    hipConfig.cmake
+    hip-config.cmake
+
+  Add the installation prefix of "hip" to CMAKE_PREFIX_PATH or set "hip_DIR"
+  to a directory containing one of the above files.  If "hip" provides a
+  separate development package or SDK, be sure it has been installed.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/fasanchezc/modelos/ExternalForces_hip/build_fixed/CMakeFiles/CMakeOutput.log".

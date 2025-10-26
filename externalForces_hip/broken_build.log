@@ -1,0 +1,68 @@
+[ 50%] Building HIP object CMakeFiles/external_forces_broken.dir/src/external_forces_broken.hip.o
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:31:8: error: 'auto_ptr<float>' is deprecated: use 'std::unique_ptr' instead [-Werror,-Wdeprecated-declarations]
+   31 |   std::auto_ptr<float> legacy_ptr(new float(1.0f));              // ERROR C++17
+      |        ^
+/opt/rh/gcc-toolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward/auto_ptr.h:287:7: note: 'auto_ptr<float>' has been explicitly marked deprecated here
+  287 |     } _GLIBCXX11_DEPRECATED_SUGGEST("std::unique_ptr");
+      |       ^
+/opt/rh/gcc-toolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux/bits/c++config.h:2248:45: note: expanded from macro '_GLIBCXX11_DEPRECATED_SUGGEST'
+ 2248 | # define _GLIBCXX11_DEPRECATED_SUGGEST(ALT) _GLIBCXX_DEPRECATED_SUGGEST(ALT)
+      |                                             ^
+/opt/rh/gcc-toolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux/bits/c++config.h:2240:19: note: expanded from macro '_GLIBCXX_DEPRECATED_SUGGEST'
+ 2240 |   __attribute__ ((__deprecated__ ("use '" ALT "' instead")))
+      |                   ^
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:38:3: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   38 |   hipMalloc(&dpos, N*sizeof(float2)); hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:38:39: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   38 |   hipMalloc(&dpos, N*sizeof(float2)); hipMalloc(&dvel, N*sizeof(float2));
+      |                                       ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:39:3: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   39 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:40:3: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   40 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:45:21: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   45 |   hipEvent_t e0,e1; hipEventCreate(&e0); hipEventCreate(&e1);
+      |                     ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:45:42: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   45 |   hipEvent_t e0,e1; hipEventCreate(&e0); hipEventCreate(&e1);
+      |                                          ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:46:3: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   46 |   hipDeviceSynchronize(); hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:46:27: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   46 |   hipDeviceSynchronize(); hipEventRecord(e0);
+      |                           ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:52:3: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   52 |   hipEventRecord(e1); hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:52:23: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   52 |   hipEventRecord(e1); hipEventSynchronize(e1);
+      |                       ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:53:17: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   53 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:55:3: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   55 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:56:3: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   56 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:57:3: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   57 |   hipFree(dpos); hipFree(dvel); hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:57:18: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   57 |   hipFree(dpos); hipFree(dvel); hipEventDestroy(e0); hipEventDestroy(e1);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:57:33: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   57 |   hipFree(dpos); hipFree(dvel); hipEventDestroy(e0); hipEventDestroy(e1);
+      |                                 ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip:57:54: error: ignoring return value of function declared with 'nodiscard' attribute [-Werror,-Wunused-result]
+   57 |   hipFree(dpos); hipFree(dvel); hipEventDestroy(e0); hipEventDestroy(e1);
+      |                                                      ^~~~~~~~~~~~~~~ ~~
+18 errors generated when compiling for gfx90a.
+gmake[2]: *** [CMakeFiles/external_forces_broken.dir/build.make:75: CMakeFiles/external_forces_broken.dir/src/external_forces_broken.hip.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/external_forces_broken.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2

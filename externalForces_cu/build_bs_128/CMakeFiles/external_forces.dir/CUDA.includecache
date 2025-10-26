@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/sph_utils.hpp
+cmath
+-
+
+/home/fasanchezc/modelos/ExternalForces/src/external_forces.cu
+cstdio
+-
+cstdlib
+-
+algorithm
+-
+memory
+-
+type_traits
+-
+vector
+-
+numeric
+-
+curand_kernel.h
+-
+sph_utils.hpp
+/home/fasanchezc/modelos/ExternalForces/src/sph_utils.hpp
+

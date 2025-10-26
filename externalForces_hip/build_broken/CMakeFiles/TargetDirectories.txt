@@ -1,0 +1,3 @@
+/home/fasanchezc/modelos/ExternalForces_hip/build_broken/CMakeFiles/external_forces_broken.dir
+/home/fasanchezc/modelos/ExternalForces_hip/build_broken/CMakeFiles/edit_cache.dir
+/home/fasanchezc/modelos/ExternalForces_hip/build_broken/CMakeFiles/rebuild_cache.dir

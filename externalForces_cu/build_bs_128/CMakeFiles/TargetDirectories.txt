@@ -1,0 +1,3 @@
+/home/fasanchezc/modelos/ExternalForces/build_bs_128/CMakeFiles/rebuild_cache.dir
+/home/fasanchezc/modelos/ExternalForces/build_bs_128/CMakeFiles/edit_cache.dir
+/home/fasanchezc/modelos/ExternalForces/build_bs_128/CMakeFiles/external_forces.dir

@@ -1,0 +1,67 @@
+>> Compilando (BS=128) ...
+-- The CXX compiler identification is GNU 5.3.0
+-- The CUDA compiler identification is NVIDIA 8.0.61
+-- Check for working CXX compiler: /opt/ohpc/pub/devtools/gcc/5.3.0/bin/c++
+-- Check for working CXX compiler: /opt/ohpc/pub/devtools/gcc/5.3.0/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working CUDA compiler: /opt/ohpc/pub/devtools/cuda/8.0/bin/nvcc
+-- Check for working CUDA compiler: /opt/ohpc/pub/devtools/cuda/8.0/bin/nvcc -- works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- BLOCK_SIZE=128  STEPS=500  NPART=31600
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/fasanchezc/modelos/ExternalForces/build_bs_128
+Scanning dependencies of target external_forces
+[ 50%] Building CUDA object CMakeFiles/external_forces.dir/src/external_forces.cu.o
+/home/fasanchezc/modelos/ExternalForces/src/external_forces.cu: In function ‘int main()’:
+/home/fasanchezc/modelos/ExternalForces/src/external_forces.cu:36:6: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   std::auto_ptr<float> legacy_ptr(new float(1.0f)); // <- al portar a HIP con C++17: error
+      ^
+/opt/ohpc/pub/devtools/gcc/5.3.0/include/c++/5.3.0/bits/unique_ptr.h:49:25: note: declared here
+   template<typename> class auto_ptr;
+                         ^
+[100%] Linking CUDA executable external_forces
+[100%] Built target external_forces
+>> Ejecutando con nvprof (BS=128) ...
+B1 ExternalForces CUDA  N=31600 steps=500  Time=12.808 ms  MPUPS=1233.573  (block=128)
+cuda,128,31600,500,12.808,1233.573
+>> OK (BS=128)  time_ms=12.808  mpups=1233.573
+>> Compilando (BS=256) ...
+-- The CXX compiler identification is GNU 5.3.0
+-- The CUDA compiler identification is NVIDIA 8.0.61
+-- Check for working CXX compiler: /opt/ohpc/pub/devtools/gcc/5.3.0/bin/c++
+-- Check for working CXX compiler: /opt/ohpc/pub/devtools/gcc/5.3.0/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working CUDA compiler: /opt/ohpc/pub/devtools/cuda/8.0/bin/nvcc
+-- Check for working CUDA compiler: /opt/ohpc/pub/devtools/cuda/8.0/bin/nvcc -- works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- BLOCK_SIZE=256  STEPS=500  NPART=31600
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/fasanchezc/modelos/ExternalForces/build_bs_256
+Scanning dependencies of target external_forces
+[ 50%] Building CUDA object CMakeFiles/external_forces.dir/src/external_forces.cu.o
+/home/fasanchezc/modelos/ExternalForces/src/external_forces.cu: In function ‘int main()’:
+/home/fasanchezc/modelos/ExternalForces/src/external_forces.cu:36:6: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   std::auto_ptr<float> legacy_ptr(new float(1.0f)); // <- al portar a HIP con C++17: error
+      ^
+/opt/ohpc/pub/devtools/gcc/5.3.0/include/c++/5.3.0/bits/unique_ptr.h:49:25: note: declared here
+   template<typename> class auto_ptr;
+                         ^
+[100%] Linking CUDA executable external_forces
+[100%] Built target external_forces
+>> Ejecutando con nvprof (BS=256) ...
+B1 ExternalForces CUDA  N=31600 steps=500  Time=12.547 ms  MPUPS=1259.280  (block=256)
+cuda,256,31600,500,12.547,1259.280
+>> OK (BS=256)  time_ms=12.547  mpups=1259.280
+Hecho.
+- Resultados del programa: results_b1_cuda.csv
+- Traces nvprof por bloque: nvprof_cuda_bs*.csv

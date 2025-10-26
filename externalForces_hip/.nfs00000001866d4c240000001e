@@ -1,0 +1,653 @@
+-- The CXX compiler identification is GNU 12.4.0
+-- The HIP compiler identification is Clang 19.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/ohpc/pub/compiler/gcc/12.4.0/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting HIP compiler ABI info
+-- Detecting HIP compiler ABI info - done
+-- Check for working HIP compiler: /opt/rocm-6.4.3/lib/llvm/bin/clang++ - skipped
+-- Detecting HIP compile features
+-- Detecting HIP compile features - done
+-- BLOCK_SIZE=128  STEPS=500  NPART=31600
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/fasanchezc/modelos/ExternalForces_hip/build_fixed
+Scanning dependencies of target external_forces_fixed
+[ 50%] Building HIP object CMakeFiles/external_forces_fixed.dir/src/external_forces_fixed.hip.o
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   46 |   hipMalloc(&dpos, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:47:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   47 |   hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:48:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   48 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:49:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   49 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |   ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |                        ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:58:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   58 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:59:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   59 |   hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:67:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |   hipEventRecord(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:68:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   68 |   hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:69:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   69 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:71:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   71 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:72:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   72 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |                        ^~~~~~~~~~~~~~~ ~~
+17 warnings generated when compiling for gfx90a.
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   46 |   hipMalloc(&dpos, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:47:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   47 |   hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:48:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   48 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:49:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   49 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |   ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |                        ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:58:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   58 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:59:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   59 |   hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:67:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |   hipEventRecord(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:68:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   68 |   hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:69:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   69 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:71:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   71 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:72:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   72 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |                        ^~~~~~~~~~~~~~~ ~~
+17 warnings generated when compiling for host.
+[100%] Linking HIP executable external_forces_fixed
+[100%] Built target external_forces_fixed
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221205' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221205_527469'
+RPL: result dir '/tmp/rpl_data_251025_221205_527469/input_results_251025_221205'
+ROCProfiler: input from "/tmp/rpl_data_251025_221205_527469/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.938 ms MPUPS=2661.000 (block=128)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221205_527469/input_results_251025_221205
+File 'rocprof_bs128_r1.csv' is generating
+File 'rocprof_bs128_r1.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs128_r1.json' is generating
+rocm,128,1,31600,500,5.938,2661.000
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221206' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221206_527542'
+RPL: result dir '/tmp/rpl_data_251025_221206_527542/input_results_251025_221206'
+ROCProfiler: input from "/tmp/rpl_data_251025_221206_527542/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.997 ms MPUPS=2634.726 (block=128)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221206_527542/input_results_251025_221206
+File 'rocprof_bs128_r2.csv' is generating
+File 'rocprof_bs128_r2.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs128_r2.json' is generating
+rocm,128,2,31600,500,5.997,2634.726
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221207' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221207_527612'
+RPL: result dir '/tmp/rpl_data_251025_221207_527612/input_results_251025_221207'
+ROCProfiler: input from "/tmp/rpl_data_251025_221207_527612/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.951 ms MPUPS=2655.201 (block=128)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221207_527612/input_results_251025_221207
+File 'rocprof_bs128_r3.csv' is generating
+File 'rocprof_bs128_r3.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs128_r3.json' is generating
+rocm,128,3,31600,500,5.951,2655.201
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   46 |   hipMalloc(&dpos, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:47:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   47 |   hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:48:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   48 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:49:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   49 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |   ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |                        ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:58:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   58 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:59:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   59 |   hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:67:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |   hipEventRecord(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:68:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   68 |   hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:69:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   69 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:71:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   71 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:72:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   72 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |                        ^~~~~~~~~~~~~~~ ~~
+17 warnings generated when compiling for gfx90a.
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   46 |   hipMalloc(&dpos, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:47:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   47 |   hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:48:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   48 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:49:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   49 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |   ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |                        ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:58:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   58 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:59:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   59 |   hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:67:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |   hipEventRecord(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:68:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   68 |   hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:69:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   69 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:71:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   71 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:72:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   72 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |                        ^~~~~~~~~~~~~~~ ~~
+17 warnings generated when compiling for host.
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221209' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221209_527739'
+RPL: result dir '/tmp/rpl_data_251025_221209_527739/input_results_251025_221209'
+ROCProfiler: input from "/tmp/rpl_data_251025_221209_527739/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.990 ms MPUPS=2637.614 (block=256)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221209_527739/input_results_251025_221209
+File 'rocprof_bs256_r1.csv' is generating
+File 'rocprof_bs256_r1.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs256_r1.json' is generating
+rocm,256,1,31600,500,5.990,2637.614
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221210' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221210_527809'
+RPL: result dir '/tmp/rpl_data_251025_221210_527809/input_results_251025_221210'
+ROCProfiler: input from "/tmp/rpl_data_251025_221210_527809/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.962 ms MPUPS=2650.144 (block=256)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221210_527809/input_results_251025_221210
+File 'rocprof_bs256_r2.csv' is generating
+File 'rocprof_bs256_r2.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs256_r2.json' is generating
+rocm,256,2,31600,500,5.962,2650.144
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221211' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221211_527879'
+RPL: result dir '/tmp/rpl_data_251025_221211_527879/input_results_251025_221211'
+ROCProfiler: input from "/tmp/rpl_data_251025_221211_527879/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.998 ms MPUPS=2634.238 (block=256)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221211_527879/input_results_251025_221211
+File 'rocprof_bs256_r3.csv' is generating
+File 'rocprof_bs256_r3.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs256_r3.json' is generating
+rocm,256,3,31600,500,5.998,2634.238
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   46 |   hipMalloc(&dpos, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:47:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   47 |   hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:48:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   48 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:49:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   49 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |   ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |                        ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:58:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   58 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:59:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   59 |   hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:67:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |   hipEventRecord(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:68:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   68 |   hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:69:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   69 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:71:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   71 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:72:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   72 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |                        ^~~~~~~~~~~~~~~ ~~
+17 warnings generated when compiling for gfx90a.
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   46 |   hipMalloc(&dpos, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:47:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   47 |   hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:48:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   48 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:49:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   49 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |   ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |                        ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:58:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   58 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:59:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   59 |   hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:67:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |   hipEventRecord(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:68:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   68 |   hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:69:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   69 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:71:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   71 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:72:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   72 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |                        ^~~~~~~~~~~~~~~ ~~
+17 warnings generated when compiling for host.
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221213' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221213_528006'
+RPL: result dir '/tmp/rpl_data_251025_221213_528006/input_results_251025_221213'
+ROCProfiler: input from "/tmp/rpl_data_251025_221213_528006/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.772 ms MPUPS=2737.192 (block=384)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221213_528006/input_results_251025_221213
+File 'rocprof_bs384_r1.csv' is generating
+File 'rocprof_bs384_r1.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs384_r1.json' is generating
+rocm,384,1,31600,500,5.772,2737.192
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221213' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221213_528076'
+RPL: result dir '/tmp/rpl_data_251025_221213_528076/input_results_251025_221213'
+ROCProfiler: input from "/tmp/rpl_data_251025_221213_528076/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=6.009 ms MPUPS=2629.607 (block=384)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221213_528076/input_results_251025_221213
+File 'rocprof_bs384_r2.csv' is generating
+File 'rocprof_bs384_r2.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs384_r2.json' is generating
+rocm,384,2,31600,500,6.009,2629.607
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221214' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221214_528148'
+RPL: result dir '/tmp/rpl_data_251025_221214_528148/input_results_251025_221214'
+ROCProfiler: input from "/tmp/rpl_data_251025_221214_528148/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.937 ms MPUPS=2661.144 (block=384)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221214_528148/input_results_251025_221214
+File 'rocprof_bs384_r3.csv' is generating
+File 'rocprof_bs384_r3.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs384_r3.json' is generating
+rocm,384,3,31600,500,5.937,2661.144
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   46 |   hipMalloc(&dpos, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:47:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   47 |   hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:48:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   48 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:49:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   49 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |   ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |                        ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:58:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   58 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:59:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   59 |   hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:67:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |   hipEventRecord(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:68:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   68 |   hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:69:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   69 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:71:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   71 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:72:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   72 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |                        ^~~~~~~~~~~~~~~ ~~
+17 warnings generated when compiling for gfx90a.
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   46 |   hipMalloc(&dpos, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:47:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   47 |   hipMalloc(&dvel, N*sizeof(float2));
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:48:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   48 |   hipMemcpy(dpos, hpos.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:49:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   49 |   hipMemcpy(dvel, hvel.data(), N*sizeof(float2), hipMemcpyHostToDevice);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |   ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:57:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |   hipEventCreate(&e0); hipEventCreate(&e1);
+      |                        ^~~~~~~~~~~~~~ ~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:58:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   58 |   hipDeviceSynchronize();
+      |   ^~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:59:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   59 |   hipEventRecord(e0);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:67:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |   hipEventRecord(e1);
+      |   ^~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:68:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   68 |   hipEventSynchronize(e1);
+      |   ^~~~~~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:69:17: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   69 |   float ms=0.f; hipEventElapsedTime(&ms, e0, e1);
+      |                 ^~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:71:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   71 |   hipMemcpy(hpos.data(), dpos, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:72:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   72 |   hipMemcpy(hvel.data(), dvel, N*sizeof(float2), hipMemcpyDeviceToHost);
+      |   ^~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |   ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:74:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |   hipFree(dpos); hipFree(dvel);
+      |                  ^~~~~~~ ~~~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |   ^~~~~~~~~~~~~~~ ~~
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_fixed.hip:75:24: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   75 |   hipEventDestroy(e0); hipEventDestroy(e1);
+      |                        ^~~~~~~~~~~~~~~ ~~
+17 warnings generated when compiling for host.
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221216' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221216_528275'
+RPL: result dir '/tmp/rpl_data_251025_221216_528275/input_results_251025_221216'
+ROCProfiler: input from "/tmp/rpl_data_251025_221216_528275/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=6.008 ms MPUPS=2629.679 (block=512)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221216_528275/input_results_251025_221216
+File 'rocprof_bs512_r1.csv' is generating
+File 'rocprof_bs512_r1.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs512_r1.json' is generating
+rocm,512,1,31600,500,6.008,2629.679
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221217' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221217_528343'
+RPL: result dir '/tmp/rpl_data_251025_221217_528343/input_results_251025_221217'
+ROCProfiler: input from "/tmp/rpl_data_251025_221217_528343/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=5.954 ms MPUPS=2653.635 (block=512)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221217_528343/input_results_251025_221217
+File 'rocprof_bs512_r2.csv' is generating
+File 'rocprof_bs512_r2.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs512_r2.json' is generating
+rocm,512,2,31600,500,5.954,2653.635
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_221218' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_221218_528412'
+RPL: result dir '/tmp/rpl_data_251025_221218_528412/input_results_251025_221218'
+ROCProfiler: input from "/tmp/rpl_data_251025_221218_528412/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=6.501 ms MPUPS=2430.405 (block=512)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_221218_528412/input_results_251025_221218
+File 'rocprof_bs512_r3.csv' is generating
+File 'rocprof_bs512_r3.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs512_r3.json' is generating
+rocm,512,3,31600,500,6.501,2430.405
+OK. Resultados: results_b1_rocm_fixed.csv y perfiles rocprof_bs*_r*.csv

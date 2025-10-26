@@ -1,0 +1,1 @@
+/opt/rocm-6.4.3/lib/llvm/bin/clang++ -O3 -DNDEBUG --offload-arch=gfx90a --hip-link --rtlib=compiler-rt -unwindlib=libgcc CMakeFiles/external_forces_broken.dir/src/external_forces_broken.hip.o -o external_forces_broken  /opt/rocm-6.4.3/lib/libamdhip64.so.6.4.60403 

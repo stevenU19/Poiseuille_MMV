@@ -1,0 +1,60 @@
+#!/bin/bash
+#SBATCH --job-name=b1_hip_prof_min
+#SBATCH --gres=gpu:1
+#SBATCH --time=00:20:00
+#SBATCH --output=b1_hip_prof_min.out
+set -euo pipefail
+
+# === Módulos y entorno ROCm 6.4.3 ===
+module purge
+module load cmake/3.24.2
+module load gnu12/12.4.0
+export PATH=/opt/rocm-6.4.3/llvm/bin:$PATH
+
+cd "${SLURM_SUBMIT_DIR}"
+
+# === Parámetros de ejecución ===
+export BLOCKS="${BLOCKS:-128 256}"
+export NPART="${NPART:-31600}"
+export STEPS="${STEPS:-500}"
+export REPS="${REPS:-3}"
+
+# === Archivo de resultados global ===
+echo "backend,block_size,run_idx,N,steps,time_ms,mpups" > results_b1_rocm_fixed.csv
+
+# === Compilación inicial ===
+rm -rf build_fixed
+cmake -S . -B build_fixed -DCMAKE_BUILD_TYPE=Release -DBLOCK_SIZE=128 -DNPART=${NPART} -DSTEPS=${STEPS}
+cmake --build build_fixed -j
+
+# === Ejecución con profiling ===
+for BS in ${BLOCKS}; do
+  cmake -S . -B build_fixed -DCMAKE_BUILD_TYPE=Release \
+        -DBLOCK_SIZE=${BS} -DNPART=${NPART} -DSTEPS=${STEPS} >/dev/null
+  cmake --build build_fixed -j >/dev/null
+
+  for r in $(seq 1 ${REPS}); do
+    base="rocprof_bs${BS}_r${r}"
+
+    echo ">> Ejecutando BLOCK_SIZE=${BS} (repetición ${r}) ..."
+    rocprof --stats --timestamp on -o "${base}.CSV" ./build_fixed/external_forces_fixed \
+      | tee "${base}.run.log"
+
+    # Extraer métricas de salida del programa
+    tms=$(sed -n 's/.*Time=\([0-9.]\+\) ms.*/\1/p' "${base}.run.log" | head -n1)
+    mp=$(sed -n 's/.*MPUPS=\([0-9.]\+\).*/\1/p' "${base}.run.log" | head -n1)
+    echo "rocm,${BS},${r},${NPART},${STEPS},${tms:-0},${mp:-0}" | tee -a results_b1_rocm_fixed.csv
+
+    # Limpiar archivos secundarios del profiler
+    rm -f "${base}.db" "${base}.json" "${base}.sysinfo.txt" \
+          "${base}.stats.csv" "${base}.hip*.csv" 2>/dev/null || true
+  done
+done
+
+echo "? Job completado. Archivos conservados:"
+echo "  - results_b1_rocm_fixed.csv  ? métricas globales"
+echo "  - rocprof_bs*_r*.CSV         ? perfiles de kernel (Avg/Total ns)"
+
+
+
+

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fasanchezc/modelos/ExternalForces_hip/include/sph_utils.hpp
+hip/hip_runtime.h
+-
+cmath
+-
+
+/home/fasanchezc/modelos/ExternalForces_hip/src/external_forces_broken.hip
+cstdio
+-
+cstdlib
+-
+algorithm
+-
+memory
+-
+type_traits
+-
+vector
+-
+numeric
+-
+hip/hip_runtime.h
+-
+sph_utils.hpp
+/home/fasanchezc/modelos/ExternalForces_hip/src/sph_utils.hpp
+

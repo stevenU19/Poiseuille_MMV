@@ -1,0 +1,17 @@
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251025_223801' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/ExternalForces_hip'
+RPL: profiling '"./build_fixed/external_forces_fixed"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251025_223801_529978'
+RPL: result dir '/tmp/rpl_data_251025_223801_529978/input_results_251025_223801'
+ROCProfiler: input from "/tmp/rpl_data_251025_223801_529978/input.xml"
+  0 metrics
+HIP(FIXED) N=31600 steps=500 Time=6.201 ms MPUPS=2547.917 (block=256)
+
+ROCPRofiler: 500 contexts collected, output directory /tmp/rpl_data_251025_223801_529978/input_results_251025_223801
+File 'rocprof_bs256_r1.csv' is generating
+File 'rocprof_bs256_r1.stats.csv' is generating
+dump json 0:500                                                                                                    dump json 499:500                                                                                                    
+File 'rocprof_bs256_r1.json' is generating
