@@ -1,0 +1,58 @@
+===> Ejecutando en: /home/fasanchezc/modelos/dambreak_hip
+===> Resultados en: /home/fasanchezc/modelos/dambreak_hip/results/run_20251026_184901
+===> Binario esperado: /home/fasanchezc/modelos/dambreak_hip/build/bin/dambreak_hip_ok
+===> Versión de HIP:
+6.4.43484-123eb5128===> Binario ya existe.
+===> Ejecutando con rocprof...
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251026_184901' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos/dambreak_hip/results/run_20251026_184901'
+RPL: profiling '"/home/fasanchezc/modelos/dambreak_hip/build/bin/dambreak_hip_ok"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251026_184901_538351'
+RPL: result dir '/tmp/rpl_data_251026_184901_538351/input_results_251026_184901'
+ROCtracer (538376):
+    rocTX-trace()
+    HSA-trace(*)
+    HSA-activity-trace()
+    HIP-trace(*)
+ROCProfiler: input from "/tmp/rpl_data_251026_184901_538351/input.xml"
+  0 metrics
+OK ROCm DamBreak MVP
+p[0]=0  vy[0]=-0.000981  y[0]=-9.81e-08
+
+ROCPRofiler: 13 contexts collected, output directory /tmp/rpl_data_251026_184901_538351/input_results_251026_184901
+hsa_copy_deps: 1
+scan hsa API data 0:843                                                                                                    scan hsa API data 100:843                                                                                                    scan hsa API data 200:843                                                                                                    scan hsa API data 300:843                                                                                                    scan hsa API data 400:843                                                                                                    scan hsa API data 500:843                                                                                                    scan hsa API data 600:843                                                                                                    scan hsa API data 700:843                                                                                                    scan hsa API data 800:843                                                                                                    scan hsa API data 842:843                                                                                                    hsa_copy_deps: 0
+scan hip API data 0:37                                                                                                    scan hip API data 36:37                                                                                                    File 'dambreak_trace.csv' is generating
+File 'dambreak_trace.stats.csv' is generating
+dump json 0:13                                                                                                    dump json 12:13                                                                                                    
+File 'dambreak_trace.json' is generating
+File 'dambreak_trace.hsa_stats.csv' is generating
+dump json 0:856                                                                                                    dump json 855:856                                                                                                    
+File 'dambreak_trace.json' is generating
+File 'dambreak_trace.hip_stats.csv' is generating
+dump json 0:37                                                                                                    dump json 36:37                                                                                                    
+File 'dambreak_trace.json' is generating
+
+========================================================
+   EJECUCIÓN FINALIZADA — DAMBREAK HIP
+========================================================
+Directorio de resultados: /home/fasanchezc/modelos/dambreak_hip/results/run_20251026_184901
+
+Archivos generados:
+dambreak_output.log
+dambreak_trace.csv
+dambreak_trace.db
+dambreak_trace.hip_stats.csv
+dambreak_trace.hsa_stats.csv
+dambreak_trace.json
+dambreak_trace.stats.csv
+dambreak_trace.sysinfo.txt
+summary.csv
+
+Vista previa de summary.csv:
+Fecha,Tiempo_total(s),Kernels
+20251026_184901,NA,1
+========================================================

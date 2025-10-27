@@ -1,0 +1,33 @@
+Scanning dependencies of target dambreak_mvp_bad
+[ 50%] Building HIP object CMakeFiles/dambreak_mvp_bad.dir/src/dambreak.hip.o
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:11:27: error: use of undeclared identifier 'blockIdx'
+   11 |   const std::uint32_t i = blockIdx.x * blockDim.x + threadIdx.x;
+      |                           ^
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:11:40: error: use of undeclared identifier 'blockDim'
+   11 |   const std::uint32_t i = blockIdx.x * blockDim.x + threadIdx.x;
+      |                                        ^
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:11:53: error: use of undeclared identifier 'threadIdx'
+   11 |   const std::uint32_t i = blockIdx.x * blockDim.x + threadIdx.x;
+      |                                                     ^
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:22:19: error: unknown type name 'hipStream_t'
+   22 |                   hipStream_t stream) {
+      |                   ^
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:25:40: error: use of undeclared identifier 'dim3'
+   25 |   hipLaunchKernelGGL((k_taitPressure), dim3(gs), dim3(bs), 0, stream,
+      |                                        ^
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:25:50: error: use of undeclared identifier 'dim3'
+   25 |   hipLaunchKernelGGL((k_taitPressure), dim3(gs), dim3(bs), 0, stream,
+      |                                                  ^
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:37:22: error: use of undeclared identifier 'blockIdx'
+   37 |   const unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
+      |                      ^
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:37:35: error: use of undeclared identifier 'blockDim'
+   37 |   const unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
+      |                                   ^
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip:37:48: error: use of undeclared identifier 'threadIdx'
+   37 |   const unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
+      |                                                ^
+9 errors generated when compiling for gfx90a.
+gmake[2]: *** [CMakeFiles/dambreak_mvp_bad.dir/build.make:75: CMakeFiles/dambreak_mvp_bad.dir/src/dambreak.hip.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/dambreak_mvp_bad.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2

@@ -1,0 +1,1 @@
+/opt/rocm-6.4.3/lib/llvm/bin/clang++ -O3 -DNDEBUG --offload-arch=gfx90a --hip-link --rtlib=compiler-rt -unwindlib=libgcc CMakeFiles/dambreak_hip_ok.dir/src/dambreak.hip.o CMakeFiles/dambreak_hip_ok.dir/src/main.cpp.o -o bin/dambreak_hip_ok  /opt/rocm-6.4.3/lib/libamdhip64.so.6.4.60403 -lpthread /opt/rocm-6.4.3/lib/libamdhip64.so.6.4.60403 

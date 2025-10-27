@@ -1,0 +1,50 @@
+===> Configurando entorno ROCm...
+Lmod has detected the following error: The following module(s) are unknown:
+"rocm/6.4.3"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "rocm/6.4.3"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+===> ROCm activo en: /opt/rocm-6.4.3
+6.4.43484-123eb5128===> Compilando proyecto dambreak_hip_ok...
+CMake Warning:
+  Ignoring extra path from command line:
+
+   ".."
+
+
+CMake Error: The source directory "/home/fasanchezc/modelos" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+Error: could not load cache
+/var/spool/slurmd/job00098/slurm_script: line 46: cd: ../scripts: No such file or directory
+===> Iniciando ejecución con rocprof...
+/var/spool/slurmd/job00098/slurm_script: line 55: cd: results_dambreak/run_20251026_184116: No such file or directory
+
+[0;31mWARNING: We are phasing out development and support for roctracer/rocprofiler/rocprof/rocprofv2 in favor of rocprofiler-sdk/rocprofv3 in upcoming ROCm releases. Going forward, only critical defect fixes will be addressed for older versions of profiling tools and libraries. We encourage all users to upgrade to the latest version, rocprofiler-sdk library and rocprofv3 tool, to ensure continued support and access to new features.[0m
+
+RPL: on '251026_184117' from '/opt/rocm-6.4.3' in '/home/fasanchezc/modelos'
+RPL: profiling '"../build/bin/dambreak_hip_ok"'
+RPL: input file ''
+RPL: output dir '/tmp/rpl_data_251026_184117_538243'
+RPL: result dir '/tmp/rpl_data_251026_184117_538243/input_results_251026_184117'
+/opt/rocm-6.4.3/bin/rocprof: line 364: ../build/bin/dambreak_hip_ok: No such file or directory
+===> Generando resumen CSV...
+
+========================================================
+   EJECUCIÓN FINALIZADA — RESULTADOS DAMBREAK
+========================================================
+Directorio de resultados: results_dambreak/run_20251026_184116
+Archivos generados:
+ - dambreak_trace.csv
+ - dambreak_output.log
+ - summary.csv
+
+Vista previa de summary.csv:
+cat: results_dambreak/run_20251026_184116/summary.csv: No such file or directory
+========================================================

@@ -1,0 +1,33 @@
+===> BASE_DIR=/home/fasanchezc/modelos/dambreak_cu
+===> BUILD_DIR=/home/fasanchezc/modelos/dambreak_cu/build
+===> APP=/home/fasanchezc/modelos/dambreak_cu/build/bin/dambreak_cuda_ref
+===> RUN_DIR=/home/fasanchezc/modelos/dambreak_cu/results_cuda/run_20251026_205006
+===> nvcc:
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2016 NVIDIA Corporation
+Built on Tue_Jan_10_13:22:03_CST_2017
+Cuda compilation tools, release 8.0, V8.0.61
+===> nvprof:
+nvprof: NVIDIA (R) Cuda command line profiler
+Copyright (c) 2012 - 2016 NVIDIA Corporation
+Release version 8.0.61 (21)
+===> Binario existente: /home/fasanchezc/modelos/dambreak_cu/build/bin/dambreak_cuda_ref
+===> Ejecutando con nvprof (CSV)...
+OK CUDA DamBreak MVP
+p[0]=0.0555169  vy[0]=0  y[0]=0
+===> Generando summary.csv...
+
+========================================================
+   EJECUCIÓN FINALIZADA — DAMBREAK CUDA (nvprof)
+========================================================
+Directorio de resultados: /home/fasanchezc/modelos/dambreak_cu/results_cuda/run_20251026_205006
+
+Archivos generados:
+dambreak_output.log
+dambreak_trace.csv
+summary.csv
+
+Vista previa summary.csv:
+Fecha,Tiempo_total,Kernels
+20251026_205006,NA,11
+========================================================

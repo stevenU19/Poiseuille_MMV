@@ -1,0 +1,16 @@
+==9227== NVPROF is profiling process 9227, command: /home/fasanchezc/modelos/dambreak_cu/build/bin/dambreak_cuda_ref
+==9227== Warning: Unified Memory Profiling is not supported on devices of compute capability less than 3.0
+==9227== Profiling application: /home/fasanchezc/modelos/dambreak_cu/build/bin/dambreak_cuda_ref
+==9227== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,B,KB,GB/s,,,,
+324.294212,4.768000,,,,,,,,,,16.000000,3.200249,"Tesla M2050 (0)","1","7","[CUDA memcpy HtoD]"
+324.319268,2.976000,,,,,,,,,,16.000000,5.127281,"Tesla M2050 (0)","1","7","[CUDA memcpy HtoD]"
+324.341892,2.720000,,,,,,,,,,16.000000,5.609849,"Tesla M2050 (0)","1","7","[CUDA memcpy HtoD]"
+324.364324,2.848000,,,,,,,,,,16.000000,5.357721,"Tesla M2050 (0)","1","7","[CUDA memcpy HtoD]"
+324.386724,2.848000,,,,,,,,,,16.000000,5.357721,"Tesla M2050 (0)","1","7","[CUDA memcpy HtoD]"
+324.408644,3.072000,,,,,,,,,,16.000000,4.967054,"Tesla M2050 (0)","1","7","[CUDA memcpy HtoD]"
+324.430948,2.848000,,,,,,,,,,16.000000,5.357721,"Tesla M2050 (0)","1","7","[CUDA memcpy HtoD]"
+324.493988,5.408000,,,,,,,,,,16.000000,2.821522,"Tesla M2050 (0)","1","7","[CUDA memcpy DtoH]"
+324.532068,5.024000,,,,,,,,,,16.000000,3.037179,"Tesla M2050 (0)","1","7","[CUDA memcpy DtoH]"
+324.568068,4.608000,,,,,,,,,,16.000000,3.311369,"Tesla M2050 (0)","1","7","[CUDA memcpy DtoH]"

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fasanchezc/modelos/dambreak_hip/include/dam_kernels.hpp
+cstdint
+-
+hip/hip_runtime.h
+-
+hip_compat_constants.h
+/home/fasanchezc/modelos/dambreak_hip/include/hip_compat_constants.h
+
+/home/fasanchezc/modelos/dambreak_hip/include/hip_compat_constants.h
+cmath
+-
+
+/home/fasanchezc/modelos/dambreak_hip/include/params.hpp
+
+/home/fasanchezc/modelos/dambreak_hip/src/dambreak.hip
+hip/hip_runtime.h
+-
+cmath
+-
+dam_kernels.hpp
+/home/fasanchezc/modelos/dambreak_hip/src/dam_kernels.hpp
+
+/home/fasanchezc/modelos/dambreak_hip/src/main.cpp
+hip/hip_runtime.h
+-
+iostream
+-
+vector
+-
+dam_kernels.hpp
+/home/fasanchezc/modelos/dambreak_hip/src/dam_kernels.hpp
+params.hpp
+/home/fasanchezc/modelos/dambreak_hip/src/params.hpp
+

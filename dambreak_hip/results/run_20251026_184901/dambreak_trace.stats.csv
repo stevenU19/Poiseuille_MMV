@@ -1,0 +1,5 @@
+"Name","Calls","TotalDurationNs","AverageNs","Percentage"
+"__amd_rocclr_copyBuffer.kd",10,54880,5488,80.51643192488262
+"dsph::dambreak::k_taitPressure(unsigned int, float, float, float, float const*, float*) [clone .kd]",1,6880,6880,10.093896713615024
+"dsph::dambreak::k_addGravity(unsigned int, float, float, float, float, float*, float*, float*) [clone .kd]",1,3200,3200,4.694835680751174
+"dsph::dambreak::k_integrateEuler(unsigned int, float, float*, float*, float*, float const*, float const*, float const*) [clone .kd]",1,3200,3200,4.694835680751174
